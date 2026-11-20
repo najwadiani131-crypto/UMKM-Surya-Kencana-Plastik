@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Surya Kencana Plastik</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#333;background:#fff}
+.top{background:#6a1b9a;color:#fff;font-size:13px;padding:6px 5%;display:flex;justify-content:space-between}
+header{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:12px 5%;border-bottom:1px solid #f1e3f7}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:#6a1b9a;font-size:20px}
+.logo i{background:linear-gradient(135deg,#6a1b9a,#e91e8c);color:#fff;width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font-style:normal}
+nav a{margin-right:16px;text-decoration:none;color:#333;font-weight:700;font-size:13px;text-transform:uppercase}
+nav a:hover{color:#e91e8c}
+input{padding:9px 12px;border:1px solid #d9b8e8;border-radius:6px;min-width:200px}
+.slider{position:relative;height:340px;overflow:hidden;margin:16px 5%;border-radius:10px;background:#6a1b9a}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .6s;display:flex;align-items:center;padding:0 8%;color:#fff}
+.slide.on{opacity:1}
+.s1{background:linear-gradient(90deg,rgba(74,20,140,.92) 45%,rgba(74,20,140,.15)),url(toko.jpg) center/cover,#6a1b9a}
+.s2{background:linear-gradient(90deg,#6a1b9a,#c2185b)}
+.s3{background:linear-gradient(90deg,#8e24aa,#f06292)}
+.slide h2{font-size:30px;margin:0 0 8px}
+.slide p{max-width:420px;margin:0 0 14px}
+.big{position:absolute;right:8%;font-size:120px}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.85);border:0;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;z-index:2}
+.l{left:12px}.r{right:12px}
+.btn{display:inline-block;background:#25d366;color:#fff;text-decoration:none;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:700}
+.btn.p{background:#e91e8c}
+h2.t{text-align:center;text-transform:uppercase;font-size:18px;margin:30px 0 16px;color:#6a1b9a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;padding:0 5%}
+.card{position:relative;border:1px solid #f1e3f7;border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.pic{height:120px;background:#f8ecfc;border-radius:8px;display:grid;place-items:center;font-size:56px}
+.flag{position:absolute;top:10px;left:10px;background:#e91e8c;color:#fff;font-size:11px;font-weight:700;padding:3px 7px;border-radius:4px;z-index:1}
+.card h3{font-size:15px;margin:4px 0 0}
+.d{font-size:12.5px;color:#666;margin:0;flex:1}
+.pr{margin:4px 0}.pr s{color:#999;font-size:13px}.pr b{color:#6a1b9a;font-size:16px}
+.promo{margin:34px 5%;border-radius:10px;background:linear-gradient(90deg,#e91e8c,#6a1b9a);color:#fff;text-align:center;padding:34px 10px}
+.promo h2{font-size:42px;margin:0}
+.tag{margin:0 5% 30px;background:#fbf3fe;border-radius:10px;padding:26px;text-align:center}
+.tag h3{margin:0 0 6px;color:#6a1b9a}
+footer{background:#4a148c;color:#fff;padding:26px 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;font-size:14px}
+footer h4{margin:0 0 8px;text-transform:uppercase;font-size:13px;color:#f8bbd9}
+footer a{color:#fff}
+.cp{background:#38006b;color:#d7c4e6;text-align:center;font-size:12px;padding:10px}
+</style>
+</head>
+<body>
+
+<div class="top"><span>Hubungi kami: 0858 8118 0932</span><span>Masuk &nbsp;|&nbsp; Keranjang (0)</span></div>
+
+<header>
+  <div class="logo"><i>SK</i>Surya Kencana Plastik</div>
+  <nav><a href="#produk">Produk</a><a href="#promo">Promo</a><a href="#kontak">Kontak</a></nav>
+  <input type="search" placeholder="Cari produk...">
+</header>
+
+<section class="slider">
+  <div class="slide s1 on"><div><h2>Sedia Macam-Macam Plastik</h2><p>Gelas, cup, kantong, tisu, dan kemasan lengkap di Pasar Modern Batununggal.</p><a class="btn p" href="#produk">Lihat Produk</a></div></div>
+  <div class="slide s2"><div><h2>Cup &amp; Gelas Plastik</h2><p>Zetta 12 oz, DeeMa 200 ml dan 650 ml, serta BSM untuk usaha minuman Anda.</p><a class="btn p" href="#produk">Lihat Produk</a></div><span class="big">🥤</span></div>
+  <div class="slide s3"><div><h2>Kantong, Pouch &amp; Tisu</h2><p>Kresek, standing pouch food grade, dan tisu untuk kebutuhan usaha dan rumah.</p><a class="btn p" href="#produk">Lihat Produk</a></div><span class="big">🛍️</span></div>
+  <button class="arrow l" onclick="go(-1)">‹</button>
+  <button class="arrow r" onclick="go(1)">›</button>
+</section>
+
+<h2 class="t" id="produk">Produk Populer</h2>
+<div class="grid" id="grid"></div>
+
+<section class="promo" id="promo">
+  <h2>DISKON 30%</h2>
+  <p>Untuk pembelian grosir minimal 10 pak. Hubungi kami via WhatsApp!</p>
+</section>
+
+<section class="tag">
+  <h3>Sedia Macam-Macam Plastik</h3>
+  <p>Lengkap, murah, dan siap kirim. Setiap kebutuhan usaha dan rumah tangga Anda ada di Surya Kencana Plastik.</p>
+</section>
+
+<footer id="kontak">
+  <div><h4>Surya Kencana Plastik</h4>Sedia macam-macam plastik untuk kebutuhan usaha dan rumah tangga.</div>
+  <div><h4>Store Information</h4>Surya Kencana Plastik<br>Pasar Moderen Batununggal Kios B06-03<br>Bandung, Jawa Barat<br>WhatsApp: <a href="https://wa.me/6285881180932">0858 8118 0932</a><br>WhatsApp 2: 0813 1218 9118</div>
+  <div><h4>Pembayaran</h4>Tunai, transfer bank, dan QRIS</div>
+</footer>
+<div class="cp">© 2026 Surya Kencana Plastik</div>
+
+<script>
+var produk=[
+["🥤","Gelas Plastik Zetta 12 oz","Gelas plastik bening 12 oz kualitas tinggi, cocok untuk es teh, kopi, dan minuman kekinian.",18000,22500,"-20%"],
+["🧋","Cup DeeMa Thin Wall 650 ml","Cup thin wall ukuran besar 650 ml, isi 25 pcs, praktis untuk minuman dingin porsi jumbo.",15000,0,"NEW"],
+["🥛","Cup DeeMa 200 ml","Cup kecil 200 ml isi 25 pcs untuk puding, jelly, dan sampel tester.",8000,0,"NEW"],
+["🍹","Gelas Plastik BSM","Gelas plastik BSM praktis untuk kebutuhan warung, acara, dan usaha minuman.",16000,20000,"-20%"],
+["🧻","Tisu Plenty","Tisu lembut dan hemat untuk kebutuhan rumah tangga dan usaha makanan.",9500,0,"NEW"],
+["🧼","Tisu Paseo","Tisu serbaguna kemasan praktis, tersedia berbagai varian untuk dibawa dan dipakai harian.",8500,0,"NEW"],
+["📦","Standing Pouch Wayang Food Grade","Kemasan berdiri food grade isi 50 lembar, tersedia ukuran 10x17,6 cm, 12x20 cm, dan 14x22 cm.",35000,0,"NEW"],
+["🛍️","Kantong Plastik Kresek","Kantong kresek warna hitam, putih, dan merah berbagai ukuran, dijual per pak.",12000,15000,"-20%"]
+];
+function rp(n){return "Rp "+n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".")}
+var h="";
+produk.forEach(function(p){
+  var lama=p[4]?"<s>"+rp(p[4])+"</s> ":"";
+  var pesan=encodeURIComponent("Halo Surya Kencana Plastik, saya ingin pesan "+p[1]);
+  h+='<article class="card"><span class="flag">'+p[5]+'</span><div class="pic">'+p[0]+'</div><h3>'+p[1]+'</h3><p class="d">'+p[2]+'</p><p class="pr">'+lama+'<b>'+rp(p[3])+'</b></p><a class="btn" target="_blank" href="https://wa.me/6285881180932?text='+pesan+'">Pesan via WhatsApp</a></article>';
+});
+document.getElementById("grid").innerHTML=h;
+
+var i=0,s=document.querySelectorAll(".slide");
+function go(n){s[i].classList.remove("on");i=(i+n+s.length)%s.length;s[i].classList.add("on")}
+setInterval(function(){go(1)},4500);
+</script>
+</body>
+</html>
